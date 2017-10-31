@@ -31,15 +31,11 @@ class HomeController extends Controller
         if(session()->has('sort'))
         {
             $sort = session('sort');
-//            if(Str::contains($sort, 'published'))
-//                dd($sort);
             $books = Books::whereUserId(\Auth::user()->id)->get()->sortBy($sort);
             $books = collect($books)->chunk(2)->toArray();
-
         } else {
             $books = Books::whereUserId(auth()->id())->get()->chunk(2)->toArray();
         }
-
         $count = Books::where('user_id', '=', auth()->id())->count();
         if (isset($count))
         {
