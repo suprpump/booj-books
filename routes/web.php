@@ -25,15 +25,3 @@ Route::post('/delete', 'BooksController@delete');
 Route::post('/sort', 'BooksController@sort');
 Route::post('/edit_order', 'BooksController@order');
 
-
-
-//Route::get('/booj-flame', function () {
-//    header('Content-Type: image/png');
-//    print file_get_contents(storage_path('booj-header.png'));
-//});
-//
-//// Background image
-//Route::get('/booj-title', function () {
-//    header('Content-Type: image/png');
-//    print file_get_contents(storage_path('booj.png'));
-//});
